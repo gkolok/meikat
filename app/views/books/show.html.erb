@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Szerzo:</strong>
+  <%= @book.szerzo %>
+</p>
+
+<p>
+  <strong>Cim:</strong>
+  <%= @book.cim %>
+</p>
+
+<p>
+  <strong>Jelzet:</strong>
+  <%= @book.jelzet %>
+</p>
+
+<p>
+  <strong>Kiado:</strong>
+  <%= @book.kiado %>
+</p>
+
+<p>
+  <strong>Ev:</strong>
+  <%= @book.ev %>
+</p>
+
+<p>
+  <strong>Kulso leiras:</strong>
+  <%= @book.kulso_leiras %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

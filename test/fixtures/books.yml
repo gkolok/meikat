@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  szerzo: MyString
+  cim: MyString
+  jelzet: MyString
+  kiado: MyString
+  ev: 9.99
+  kulso_leiras: MyString
+
+two:
+  szerzo: MyString
+  cim: MyString
+  jelzet: MyString
+  kiado: MyString
+  ev: 9.99
+  kulso_leiras: MyString
