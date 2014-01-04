@@ -1,17 +1,19 @@
-<h1>Listing books</h1>
+<h3>Felsőgödi Plébánia Katalógus</h3>
 
-<table>
+<table id="books">
   <thead>
     <tr>
-      <th>Szerzo</th>
-      <th>Cim</th>
+      <th>Szerző</th>
+      <th>Cím</th>
       <th>Jelzet</th>
-      <th>Kiado</th>
-      <th>Ev</th>
-      <th>Kulso leiras</th>
+      <th>Kiadó</th>
+      <th>Év</th>
+      <th>Külső leírás</th>
+<!--        
       <th></th>
       <th></th>
       <th></th>
+-->      
     </tr>
   </thead>
 
@@ -24,9 +26,11 @@
         <td><%= book.kiado %></td>
         <td><%= book.ev %></td>
         <td><%= book.kulso_leiras %></td>
+<!--        
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->        
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +38,6 @@
 
 <br>
 
+<!--        
 <%= link_to 'New Book', new_book_path %>
+-->
