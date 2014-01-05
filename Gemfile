@@ -19,9 +19,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'will_paginate'
 
 #group :assets do
-    # Use SCSS for stylesheets
+        # Use SCSS for stylesheets
     gem 'sass-rails', '~> 4.0.0'
 
     # Use Uglifier as compressor for JavaScript assets
