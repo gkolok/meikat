@@ -37,7 +37,7 @@ private
     books = Book.order("#{sort_column} #{sort_direction}")
     books = books.page(page).per_page(per_page)
     if params[:sSearch].present?
-    books = books.where("szerzo like :search or kiado like :search or cim like :search or ev like :search or jelzet like :search", search: "%#{params[:sSearch]}%")
+    books = books.where("szerzo like :search or kiado like :search or cim like :search or ev like :search or jelzet like :search or kulso_leiras like :search", search: "%#{params[:sSearch]}%")
     end
     books
   end
