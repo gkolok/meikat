@@ -24,7 +24,7 @@ private
         book.jelzet,
         book.kiado,
         book.ev,
-        if book.kulso_leiras.start_with? 'http' then link_to(book.kulso_leiras,book.kulso_leiras) else book.kulso_leiras end,
+        if (book.kulso_leiras && book.kulso_leiras.start_with?('http')) then link_to(book.kulso_leiras,book.kulso_leiras) else book.kulso_leiras end,
       ]
     end
   end
