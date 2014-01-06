@@ -24,7 +24,7 @@ private
         book.jelzet,
         book.kiado,
         book.ev,
-        link_to(book.kulso_leiras,book.kulso_leiras),
+        if book.kulso_leiras.start_with? 'http' then link_to(book.kulso_leiras,book.kulso_leiras) else book.kulso_leiras end,
       ]
     end
   end
@@ -37,7 +37,7 @@ private
     books = Book.order("#{sort_column} #{sort_direction}")
     books = books.page(page).per_page(per_page)
     if params[:sSearch].present?
-    books = books.where("szerzo like :search or kiado like :search or cim like :search or ev like :search or jelzet like :search or kulso_leiras like :search", search: "%#{params[:sSearch]}%")
+    books = books.where("lower(szerzo) like lower(:search) or lower(kiado) like lower(:search) or lower(cim) like lower(:search) or ev like :search or lower(jelzet) like lower(:search) or lower(kulso_leiras) like lower(:search)", search: "%#{params[:sSearch]}%")
     end
     books
   end
