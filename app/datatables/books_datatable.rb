@@ -24,7 +24,10 @@ private
         book.jelzet,
         book.kiado,
         book.ev,
-        if (book.kulso_leiras && book.kulso_leiras.start_with?('http')) then link_to(book.kulso_leiras,book.kulso_leiras) else book.kulso_leiras end,
+        if (book.kulso_leiras && book.kulso_leiras.start_with?('http')) 
+          then link_to('leírás',book.kulso_leiras) 
+          else book.kulso_leiras 
+        end,
       ]
     end
   end
@@ -41,10 +44,8 @@ private
       cols = %w[szerzo cim jelzet kiado ev kulso_leiras]
       keys = params[:sSearch].downcase.split.map { |k|  "%#{k}%"}
       where = (1..keys.size).map{|i| cols.map {|c| "lower(#{c}) like :s#{i}"}.join ' or '}.map{|term| "(#{term})"}.join ' and '
-      puts where
       param_map = {}
       keys.each_index {|i| param_map["s#{i+1}".to_sym] = keys[i]}
-      puts param_map
       books = books.where(where, param_map)
     end
     books
