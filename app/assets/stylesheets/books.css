@@ -1,0 +1,13 @@
+select {
+    width: inherit;
+}
+input[type="text"] {
+    width: inherit;
+    display: inline;
+}
+.dataTables_filter {
+    float: left;
+}
+.dataTables_length {
+    float: right;
+}
