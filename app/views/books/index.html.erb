@@ -9,11 +9,10 @@
       <th>Kiadó</th>
       <th>Év</th>
       <th>Részletes leírás</th>
-<!--        
+      <% if user_is_admin? %>
       <th></th>
       <th></th>
-      <th></th>
--->      
+      <% end %>  
     </tr>
   </thead>
 
@@ -23,6 +22,5 @@
 
 <br>
 
-<!--        
-<%= link_to 'New Book', new_book_path %>
--->
+<%= if user_is_admin? then '' else link_to 'Konyvtaros', action: :login end %>
+

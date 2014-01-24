@@ -1,5 +1,5 @@
 class BooksDatatable
-  delegate :params, :link_to, to: :@view
+  delegate :params, :link_to, :edit_book_path, to: :@view
 
   def initialize(view)
     @view = view
@@ -18,7 +18,7 @@ private
 
   def data
     books.map do |book|
-      [
+      d = [
         book.szerzo,
         book.cim,
         book.jelzet,
@@ -29,6 +29,13 @@ private
           else book.kulso_leiras 
         end,
       ]
+      if @view.user_is_admin?
+        d = d + [
+          link_to('Módosítás', edit_book_path(book)),
+          link_to('Törlés', book, method: :delete, data: { confirm: 'Biztos, hogy törölni akarod?' }),
+        ]  
+      end
+      d
     end
   end
 

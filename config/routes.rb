@@ -1,5 +1,6 @@
 Plebkat::Application.routes.draw do
   root 'books#index'
+  get 'login' => 'books#login'
   resources :books
 
   # The priority is based upon order of creation: first created -> highest priority.

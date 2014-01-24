@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_filter :authenticate, only: [:edit, :update, :destroy, :login]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
@@ -13,6 +14,10 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+  end
+
+  def login
+    redirect_to books_url
   end
 
   # GET /books/new
