@@ -11,3 +11,7 @@ input[type="text"] {
 .dataTables_length {
     float: right;
 }
+table.dataTable td {
+    padding: inherit;
+    height: 30px;
+}
