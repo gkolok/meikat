@@ -15,3 +15,6 @@ table.dataTable td {
     padding: inherit;
     height: 30px;
 }
+.paging_full_numbers a.paginate_button, .paging_full_numbers a.paginate_active {
+    border-radius: 2px;
+}

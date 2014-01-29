@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
         $('#books').dataTable
+          sDom: 'f<"tools">rlt<"bottom"ip><"clear">'
           bStateSave: true
           sPaginationType: "full_numbers"
           bProcessing: true
