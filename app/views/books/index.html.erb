@@ -9,6 +9,7 @@
       <th>Kiadó</th>
       <th>Év</th>
       <th>Részletes leírás</th>
+      <th>Kölcsönző</th>
       <% if user_is_admin? %>
       <th></th>
       <th></th>
@@ -22,5 +23,5 @@
 
 <br>
 
-<%= if user_is_admin? then '' else link_to 'Konyvtaros', action: :login end %>
+<%= if user_is_admin? or user_is_librarian? then '' else link_to 'Belépés', action: :login end %>
 

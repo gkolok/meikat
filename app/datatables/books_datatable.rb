@@ -28,6 +28,12 @@ private
           then link_to('leírás',book.kulso_leiras) 
           else book.kulso_leiras 
         end,
+        if book.allapot == :kolcsonozve.to_s
+          then 
+            book.lendings.last.lender
+          else ''
+        end
+
       ]
       if @view.user_is_admin?
         d = d + [
@@ -48,7 +54,7 @@ private
     books = books.page(page).per_page(per_page)
   
     if params[:sSearch].present?
-      cols = %w[szerzo cim jelzet kiado ev kulso_leiras]
+      cols = %w[szerzo cim jelzet kiado ev]
       keys = params[:sSearch].downcase.split.map { |k|  "%#{k}%"}
       where = (1..keys.size).map{|i| cols.map {|c| "lower(#{c}) like :s#{i}"}.join ' or '}.map{|term| "(#{term})"}.join ' and '
       param_map = {}

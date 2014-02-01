@@ -4,6 +4,10 @@ module ApplicationHelper
   end
 
   def user_is_admin?
-    logged_in? && session[:role] = :admin
+    logged_in? && session[:role] == :admin
+  end
+
+  def user_is_librarian?
+    logged_in? && session[:role] == :librarian
   end
 end

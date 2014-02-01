@@ -4,6 +4,7 @@
 jQuery ->
         $('#books').dataTable
           sDom: 'f<"tools">rlt<"bottom"ip><"clear">'
+          fnDrawCallback: drawCallback
           bStateSave: true
           sPaginationType: "full_numbers"
           bProcessing: true
@@ -36,3 +37,13 @@ jQuery ->
              "oAria":
                  "sSortAscending":  ": aktiválja a növekvő rendezéshez",
                  "sSortDescending": ": aktiválja a csökkenő rendezéshez"
+
+drawCallback = (oSettings) ->
+  changeClass row for row in oSettings.aoData
+
+changeClass = (row) ->
+  name = row._aData[6];
+  if name isnt ''
+  then statusClass = 'stateKolcsonozve'
+  else statusClass = row.nTr.className
+  row.nTr.className = statusClass;
