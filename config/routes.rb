@@ -1,4 +1,5 @@
 Plebkat::Application.routes.draw do
+  get "lendings/new"
   root 'books#index'
   get 'login' => 'books#login'
   resources :books do

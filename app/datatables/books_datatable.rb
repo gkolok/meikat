@@ -1,5 +1,5 @@
 class BooksDatatable
-  delegate :params, :link_to, :edit_book_path, :image_tag, to: :@view
+  delegate :params, :link_to, :edit_book_path, :image_tag, :new_book_lending_path, :edit_book_lending_path, to: :@view
 
   def initialize(view)
     @view = view
@@ -43,9 +43,9 @@ private
       elsif @view.user_is_librarian?
         d = d + [
           if book.allapot == :kolcsonozve.to_s
-            link_to(image_tag('arrow_left.png'), edit_book_lending_path(book))
+            link_to(image_tag('arrow_left.png'), edit_book_lending_path(book, book.lendings.last))
           else
-            link_to(image_tag('arrow_right.png'), new_book_lending(book))
+            link_to(image_tag('arrow_right.png'), new_book_lending_path(book))
           end
         ]  
       end
