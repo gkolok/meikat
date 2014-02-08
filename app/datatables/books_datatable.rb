@@ -40,6 +40,14 @@ private
           link_to(image_tag('edit.png'), edit_book_path(book)),
           link_to(image_tag('delete.png'), book, method: :delete, data: { confirm: 'Biztos, hogy törölni akarod?' }),
         ]  
+      elsif @view.user_is_librarian?
+        d = d + [
+          if book.allapot == :kolcsonozve.to_s
+            link_to(image_tag('arrow_left.png'), edit_book_path(book))
+          else
+            link_to(image_tag('arrow_right.png'), edit_book_path(book))
+          end
+        ]  
       end
       d
     end
