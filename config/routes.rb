@@ -1,7 +1,9 @@
 Plebkat::Application.routes.draw do
   root 'books#index'
   get 'login' => 'books#login'
-  resources :books
+  resources :books do
+    resources :lendings
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

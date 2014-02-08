@@ -43,9 +43,9 @@ private
       elsif @view.user_is_librarian?
         d = d + [
           if book.allapot == :kolcsonozve.to_s
-            link_to(image_tag('arrow_left.png'), edit_book_path(book))
+            link_to(image_tag('arrow_left.png'), edit_book_lending_path(book))
           else
-            link_to(image_tag('arrow_right.png'), edit_book_path(book))
+            link_to(image_tag('arrow_right.png'), new_book_lending(book))
           end
         ]  
       end
