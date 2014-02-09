@@ -1,6 +1,6 @@
 class LendingsController < ApplicationController
   respond_to :html
-  before_action :set_book, only: [:new, :create, :edit]
+  before_action :set_book, only: [:new, :create, :edit, :update]
   
   def new
     @lending = @book.lendings.new
@@ -21,6 +21,10 @@ class LendingsController < ApplicationController
   end
 
   def edit
+    @lending = @book.lendings.last
+  end
+
+  def update
     @book.allapot = nil
     respond_to do |format|
       @book.save

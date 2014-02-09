@@ -11,11 +11,19 @@
     </div>
   <% end %>
 
+  <p>
+    <strong>Szerző:</strong>
+    <%= @book.szerzo %>
+  </p>
+  <p>
+    <strong>Cím:</strong>
+    <%= @book.cim %>
+  </p>
   <div class="field">
-    <%= f.label :kolcsonzo %><br>
+    <%= f.label "Kölcsönző:" %><br>
     <%= f.text_field :lender %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Kölcsönzés" %>
   </div>
 <% end %>

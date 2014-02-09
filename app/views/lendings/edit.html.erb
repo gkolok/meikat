@@ -1,0 +1,21 @@
+<%= form_for([@book, @lending]) do |f| %>
+  <p>
+    <strong>Szerző:</strong>
+    <%= @book.szerzo %>
+  </p>
+
+  <p>
+    <strong>Cím:</strong>
+    <%= @book.cim %>
+  </p>
+
+  <p>
+    <strong>Kölcsönző:</strong>
+    <%= @lending.lender %>
+  </p>
+
+  <div class="actions">
+    <%= f.submit "Visszavétel" %>
+  </div>
+<% end %>
+<%= link_to 'Mégsem', books_path %>
