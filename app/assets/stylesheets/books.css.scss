@@ -18,5 +18,15 @@ table.dataTable td {
 .paging_full_numbers a.paginate_button, .paging_full_numbers a.paginate_active {
     border-radius: 2px;
 }
+
 table tr.stateKolcsonozve { background: #F7E6C8; }
 
+.background {
+    position: absolute;
+    width: 100%;
+    background: #e1e1e1;
+}
+
+#main {
+    margin: 15px;
+}
