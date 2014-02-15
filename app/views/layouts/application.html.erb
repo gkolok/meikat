@@ -12,7 +12,7 @@
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
   	<title>Felsőgödi Plébánia Katalógus</title>
 
   	<%= stylesheet_link_tag    "application" %>
@@ -20,10 +20,21 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
-
-    <%= yield %>
-
+  <body class="background">
+    <div id="main">
+      <div id="header-w">
+        <div id="header">
+          <div class="topmenu">
+            <div class="topleft"></div><div class="topright"></div>
+          </div>
+          <a href="/">
+          <img src="/assets/logo.png" border="0" class="logo">
+          </a>
+          <div class="slogan"></div>
+        </div> 
+      </div>
+      <%= yield %>
+    </div>
     
     <%= javascript_include_tag "application" %>
   </body>
