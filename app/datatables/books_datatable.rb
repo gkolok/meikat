@@ -25,7 +25,7 @@ private
         book.kiado,
         book.ev,
         if (book.kulso_leiras && book.kulso_leiras.start_with?('http')) 
-          then link_to('leírás',book.kulso_leiras) 
+          then link_to('leírás',book.kulso_leiras, target: '_blank') 
           else book.kulso_leiras 
         end,
         if book.allapot == :kolcsonozve.to_s
