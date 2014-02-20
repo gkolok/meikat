@@ -30,7 +30,7 @@ jQuery ->
                '<option value="30">50</option>'+
                '<option value="40">100</option>'+
                '<option value="50">500</option>'+
-               '<option value="-1">Mind</option>'+
+               '<option value="2000">Mind</option>'+
                '</select> találat oldalanként',
              "sLoadingRecords": "Betöltés...",
              "sProcessing":     "Feldolgozás...",
