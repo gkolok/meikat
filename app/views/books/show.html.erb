@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Szerzo:</strong>
+  <strong>Szerző:</strong>
   <%= @book.szerzo %>
 </p>
 
 <p>
-  <strong>Cim:</strong>
+  <strong>Cím:</strong>
   <%= @book.cim %>
 </p>
 
@@ -16,19 +16,19 @@
 </p>
 
 <p>
-  <strong>Kiado:</strong>
+  <strong>Kiadó:</strong>
   <%= @book.kiado %>
 </p>
 
 <p>
-  <strong>Ev:</strong>
+  <strong>Év:</strong>
   <%= @book.ev %>
 </p>
 
 <p>
-  <strong>Kulso leiras:</strong>
+  <strong>Külső leírás:</strong>
   <%= @book.kulso_leiras %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to 'Szerkesztés', edit_book_path(@book) %> |
+<%= link_to 'Vissza', books_path %>
