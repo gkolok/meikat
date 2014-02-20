@@ -26,10 +26,10 @@ jQuery ->
              "sInfoThousands":  " ",
              "sLengthMenu": '<select>'+
                '<option value="10">10</option>'+
-               '<option value="20">25</option>'+
-               '<option value="30">50</option>'+
-               '<option value="40">100</option>'+
-               '<option value="50">500</option>'+
+               '<option value="25">25</option>'+
+               '<option value="50">50</option>'+
+               '<option value="100">100</option>'+
+               '<option value="500">500</option>'+
                '<option value="2000">Mind</option>'+
                '</select> találat oldalanként',
              "sLoadingRecords": "Betöltés...",
