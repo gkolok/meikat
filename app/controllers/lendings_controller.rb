@@ -4,11 +4,13 @@ class LendingsController < ApplicationController
   
   def new
     @lending = @book.lendings.new
+    @lending.deadline = Date.today + 4*7
   end
 
   def create
     @book.allapot = :kolcsonozve
     @lending = @book.lendings.new(lending_params)
+    @lending.deadline = Date.civil(*params[:lending].sort.map(&:last).map(&:to_i))
     respond_to do |format|
       @lending.save
       @book.save

@@ -23,6 +23,10 @@
     <%= f.label "Kölcsönző:" %><br>
     <%= f.text_field :lender %>
   </div>
+  <div class="field">
+    <%= f.label "Határidő:" %><br>
+    <%= f.date_select(:deadline)  %>
+  </div>
   <div class="actions">
     <%= f.submit "Kölcsönzés" %>
   </div>
