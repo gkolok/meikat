@@ -24,7 +24,14 @@ jQuery ->
              "sInfoFiltered":   "(_MAX_ összes rekord közül szűrve)",
              "sInfoPostFix":    "",
              "sInfoThousands":  " ",
-             "sLengthMenu":     "_MENU_ találat oldalanként",
+             "sLengthMenu": '<select>'+
+               '<option value="10">10</option>'+
+               '<option value="20">25</option>'+
+               '<option value="30">50</option>'+
+               '<option value="40">100</option>'+
+               '<option value="50">500</option>'+
+               '<option value="-1">Mind</option>'+
+               '</select> találat oldalanként',
              "sLoadingRecords": "Betöltés...",
              "sProcessing":     "Feldolgozás...",
              "sSearch":         "Keresés:",
