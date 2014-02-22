@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def authenticate
-      authenticate_with_http_basic do |username, password|
+      authenticate_or_request_with_http_basic do |username, password|
          if (username == ADMIN_ID && password == ADMIN_PASSWORD)
             session[:role] = :admin
          elsif (username == LIBRARIAN_ID && password == LIBRARIAN_PASSWORD)
