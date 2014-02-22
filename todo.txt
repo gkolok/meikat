@@ -1,0 +1,11 @@
+    - háttérszín, pici margó, favicon (kis képecske a böngésző fülön) - hasonlóan a felsogod.plebania.hu laphoz
+    - leírás megnyitás külön lapon
+    - új könyv adatbázis (Péter által elküldöt legújabb, 1304 rekord)
+    - Szépirod. előtag hozzáadva az előtag nélküli jelzetekhez
+    - kölcsönzési határidő megadás kiadásnál és megjelenítés a listán
+    - adminisztrátor felület magyarítás
+    - uj konyv
+
+Ami még hiányzik:
+    - törlés megerősítés könyv adatokkal
+    - belépés új ablakon
