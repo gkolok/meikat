@@ -27,6 +27,6 @@
 <% if user_is_admin? or user_is_librarian? then  %>
 <%=   link_to 'Új könyv', new_book_path if user_is_admin? %>
 <%  else %>
-<%=   link_to 'Könyvtáros', action: :login  %>
+<%=   link_to 'Könyvtáros', action: :login  %> (konyvtaros.felsogod kukac gmail.com)
 <% end %>
 

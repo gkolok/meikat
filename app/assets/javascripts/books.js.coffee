@@ -11,11 +11,12 @@ jQuery ->
           bServerSide: true
           sAjaxSource: $('#books').data('source')
           aoColumnDefs: [
-            {sWidth: "22%",aTargets: [ 0 ]},
-            {sWidth: "32%",aTargets: [ 1 ]},
+            {sWidth: "22%",aTargets: [ 0 ]}
+            {sWidth: "32%",aTargets: [ 1 ]}
             {sWidth: "15%",aTargets: [ 3 ]}
             {sWidth: "3%",aTargets: [ 4 ]}
             {sWidth: "5%",aTargets: [ 5 ]}
+            {bSortable: false, aTargets: [5,6,7]}
           ]
           "oLanguage":
              "sEmptyTable":     "Nincs rendelkezésre álló adat",

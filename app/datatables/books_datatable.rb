@@ -1,5 +1,5 @@
 class BooksDatatable
-  delegate :params, :link_to, :edit_book_path, :image_tag, :new_book_lending_path, :edit_book_lending_path, to: :@view
+  delegate :session, :params, :link_to, :edit_book_path, :image_tag, :new_book_lending_path, :edit_book_lending_path, to: :@view
 
   def initialize(view)
     @view = view
@@ -59,7 +59,8 @@ private
   end
 
   def fetch_books
-    books = Book.order("#{sort_column} #{sort_direction}")
+
+    books = Book.order("#{sort_column} #{sort_direction}") 
     books = books.page(page).per_page(per_page)
   
     if params[:sSearch].present?
@@ -82,8 +83,14 @@ private
   end
 
   def sort_column
-    columns = %w[szerzo cim jelzet kiado ev kulso_leiras]
-    columns[params[:iSortCol_0].to_i]
+    columns = %w[szerzo cim jelzet kiado ev]
+    column_index = params[:iSortCol_0].to_i
+    if (column_index < columns.size)
+      session[:sort_column] = columns[column_index]
+    else
+      session[:sort_column]
+    end
+    
   end
 
   def sort_direction
