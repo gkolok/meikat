@@ -1,3 +1,10 @@
+Ami még hiányzik:
+    - keresés/rendezés Kölcsönző és Határidő szerint
+    - belépés külön nézeten
+    - törlés megerősítés külön nézeten
+    - plebkat2
+
+Már megvan
     - háttérszín, pici margó, favicon (kis képecske a böngésző fülön) - hasonlóan a felsogod.plebania.hu laphoz
     - leírás megnyitás külön lapon
     - új könyv adatbázis (Péter által elküldöt legújabb, 1304 rekord)
@@ -5,7 +12,4 @@
     - kölcsönzési határidő megadás kiadásnál és megjelenítés a listán
     - adminisztrátor felület magyarítás
     - uj konyv
-
-Ami még hiányzik:
     - törlés megerősítés könyv adatokkal
-    - belépés új ablakon
