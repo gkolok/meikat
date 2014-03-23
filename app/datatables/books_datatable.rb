@@ -28,14 +28,10 @@ private
           then link_to('leírás',book.kulso_leiras, target: '_blank') 
           else book.kulso_leiras 
         end,
+        book.lender,
+        book.deadline
       ]
-        if book.allapot == :kolcsonozve.to_s
-          then 
-            lending = book.lendings.last
-            d << lending.lender << lending.deadline
-          else 
-            d << '' << ''
-        end
+    
 
       
       if @view.user_is_admin?
@@ -64,9 +60,11 @@ private
     books = books.page(page).per_page(per_page)
   
     if params[:sSearch].present?
-      cols = %w[szerzo cim jelzet kiado ev]
+      cols = %w[szerzo cim jelzet kiado ev lender deadline]
       keys = params[:sSearch].downcase.split.map { |k|  "%#{k}%"}
-      where = (1..keys.size).map{|i| cols.map {|c| "lower(#{c}) like :s#{i}"}.join ' or '}.map{|term| "(#{term})"}.join ' and '
+      where = (1..keys.size).map{|i| cols.map {|c| 
+        value = c == 'deadline' ? "to_char(#{c},'YYYY-MM-DD')" : "#{c}"
+        "lower(#{value}) like :s#{i}"}.join ' or '}.map{|term| "(#{term})"}.join ' and '
       param_map = {}
       keys.each_index {|i| param_map["s#{i+1}".to_sym] = keys[i]}
       books = books.where(where, param_map)
@@ -83,7 +81,7 @@ private
   end
 
   def sort_column
-    columns = %w[szerzo cim jelzet kiado ev]
+    columns = %w[szerzo cim jelzet kiado ev lender deadline]
     column_index = params[:iSortCol_0].to_i
     if (column_index < columns.size)
       session[:sort_column] = columns[column_index]
