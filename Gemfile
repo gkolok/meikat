@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'will_paginate'
 
+gem 'puma'
+
 #group :assets do
         # Use SCSS for stylesheets
     gem 'sass-rails', '~> 4.0.0'
