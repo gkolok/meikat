@@ -16,7 +16,7 @@ jQuery ->
             {sWidth: "15%",aTargets: [ 3 ]}
             {sWidth: "3%",aTargets: [ 4 ]}
             {sWidth: "5%",aTargets: [ 5 ]}
-            {bSortable: false, aTargets: [5]}
+            {bSortable: false, aTargets: [6]}
           ]
           "oLanguage":
              "sEmptyTable":     "Nincs rendelkezésre álló adat",
@@ -50,7 +50,7 @@ drawCallback = (oSettings) ->
   changeClass row for row in oSettings.aoData
 
 changeClass = (row) ->
-  name = row._aData[6];
+  name = row._aData[7];
   if name isnt null
   then statusClass = 'stateKolcsonozve'
   else statusClass = row.nTr.className

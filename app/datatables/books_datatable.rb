@@ -24,6 +24,7 @@ private
         book.jelzet,
         book.kiado,
         book.ev,
+        book.targyszavak,
         if (book.kulso_leiras && book.kulso_leiras.start_with?('http')) 
           then link_to('leírás',book.kulso_leiras, target: '_blank') 
           else book.kulso_leiras 
@@ -60,7 +61,7 @@ private
     books = books.page(page).per_page(per_page)
   
     if params[:sSearch].present?
-      cols = %w[szerzo cim jelzet kiado ev lender deadline]
+      cols = %w[szerzo cim jelzet kiado ev targyszavak lender deadline]
       keys = params[:sSearch].downcase.split.map { |k|  "%#{k}%"}
       where = (1..keys.size).map{|i| cols.map {|c| 
         value = c == 'deadline' ? "to_char(#{c},'YYYY-MM-DD')" : "#{c}"

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323170011) do
+ActiveRecord::Schema.define(version: 20160912191547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: true do |t|
     t.string   "szerzo"
-    t.string   "cim"
+    t.string   "cim",          limit: 500
     t.string   "jelzet"
     t.string   "kiado"
     t.string   "ev"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20140323170011) do
     t.string   "allapot"
     t.string   "lender"
     t.date     "deadline"
+    t.string   "raktar"
+    t.string   "targyszavak",  limit: 1024
+    t.string   "megjegyzesek"
   end
 
   create_table "lendings", force: true do |t|
